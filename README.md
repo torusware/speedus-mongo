@@ -17,6 +17,7 @@ Each tag corresponds to the tag of the MongoDB base image:
 - [`2.4` *(2.4/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/2.4 "2.4 Dockerfile")
 - [`2.6` *(2.6/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/2.6 "2.6 Dockerfile")
 - [`3.0`, `latest` *(3.0/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/3.0 "3.0 Dockerfile")
+- [`3.1` *(3.1/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/3.1 "3.1 Dockerfile")
 
 # Launching instructions
 In order to run a container with our image, execute:
