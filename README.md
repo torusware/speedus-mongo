@@ -1,7 +1,7 @@
 ![torusware logo](http://dl.torusware.com/images/torusware_isotipo_small.png "Torusware")
 ![speedus logo](http://dl.torusware.com/images/speedus_small.jpg "Speedus")
 ![mongo logo](https://raw.githubusercontent.com/docker-library/docs/master/mongo/logo.png "MongoDB")
-# Speedus Plug&Run Lite for MongoDB
+# Speedus Plug&Run for MongoDB
 MongoDB is a cross-platform document-oriented database. Classified as a NoSQL database, MongoDB uses JSON-like documents with dynamic schemas (MongoDB calls the format BSON), making the integration of data in certain types of applications easier and faster. With the speedus solution for high-performance communications, you can achieve even more speed in the most popular NoSQL database system. Check us out at [our website](https://bit.ly/1MKxCuh).
 
 Speedus is your communications highway:
@@ -22,13 +22,13 @@ Each tag corresponds to the tag of the MongoDB base image:
 # Launching instructions
 In order to run a container with our image, execute:
 ```bash
-sudo docker run --name speedus-mongo -d torusware/speedus-mongo
+sudo docker run --name speedus-mongo -v /dev/shm:/dev/shm -d torusware/speedus-mongo
 ```
 As the original MongoDB image, this image exposes port 27017, so standard container linking will make it automatically available to the linked containers.
 
 If you want to test its performance, you can use the torusware/speedus-ycsb docker image, which contains the Yahoo! Cloud Service Benchmark.
 ```bash
-sudo docker run --rm -ti --net=container:speedus-mongo torusware/speedus-ycsb
+sudo docker run --rm -ti --net=container:speedus-mongo -v /dev/shm:/dev/shm torusware/speedus-ycsb
 // Indicate the YCSB to use ipv4 as the MongoDB server
 :/# export _JAVA_OPTIONS=-Djava.net.preferIPv4Stack=true
 // Load the Data
@@ -59,10 +59,10 @@ If you need more information, you can check the README file inside the container
 
 # Check our other images in the Docker Hub
 
-- [Speedus Plug&Run Lite for Ubuntu](https://registry.hub.docker.com/u/torusware/speedus-ubuntu/)
-- [Speedus Plug&Run Lite for CentOS](https://registry.hub.docker.com/u/torusware/speedus-centos/)
-- [Speedus Plug&Run Lite for Redis](https://registry.hub.docker.com/u/torusware/speedus-redis/)
-- [Speedus Plug&Run Lite for YCSB](https://registry.hub.docker.com/u/torusware/speedus-ycsb/)
+- [Speedus Plug&Run for Ubuntu](https://registry.hub.docker.com/u/torusware/speedus-ubuntu/)
+- [Speedus Plug&Run for CentOS](https://registry.hub.docker.com/u/torusware/speedus-centos/)
+- [Speedus Plug&Run for Redis](https://registry.hub.docker.com/u/torusware/speedus-redis/)
+- [Speedus Plug&Run for YCSB](https://registry.hub.docker.com/u/torusware/speedus-ycsb/)
 
 # Example Use Cases
 
