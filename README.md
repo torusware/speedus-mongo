@@ -18,6 +18,8 @@ Each tag corresponds to the tag of the MongoDB base image:
 - [`2.6` *(2.6/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/2.6 "2.6 Dockerfile")
 - [`3.0`, `latest` *(3.0/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/3.0 "3.0 Dockerfile")
 - [`3.1` *(3.1/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/3.1 "3.1 Dockerfile")
+- [`3.2`, `latest` *(3.2/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/3.2 "3.2 Dockerfile")
+- [`3.3` *(3.3/Dockerfile)*](https://github.com/torusware/speedus-mongo/tree/master/3.3 "3.3 Dockerfile")
 
 # Launching instructions
 In order to run a container with our image, execute:
@@ -30,11 +32,11 @@ If you want to test its performance, you can use the torusware/speedus-ycsb dock
 ```bash
 sudo docker run --rm -ti --net=container:speedus-mongo -v /dev/shm:/dev/shm torusware/speedus-ycsb
 // Indicate the YCSB to use ipv4 as the MongoDB server
-:/# export _JAVA_OPTIONS=-Djava.net.preferIPv4Stack=true
+# export JAVA_OPTIONS=-Djava.net.preferIPv4Stack=true
 // Load the Data
-:/# speedus ycsb load mongodb-async -s -p mongodb.url=mongodb://127.0.0.1:27017/ycsb -threads 1 -P ~/YCSB/workloads/workloadb -p recordcount=100000 > /dev/null
+# speedus ycsb load mongodb-async -s -p mongodb.url=mongodb://127.0.0.1:27017/ycsb -threads 1 -P ~/YCSB/workloads/workloadb -p recordcount=100000 > /dev/null
 // Execute the workload
-:/# speedus ycsb run mongodb-async -s -p mongodb.url=mongodb://127.0.0.1:27017/ycsb -threads 1 -P ~/YCSB/workloads/workloadb -p recordcount=100000 1> extendedResults.txt
+# speedus ycsb run mongodb-async -s -p mongodb.url=mongodb://127.0.0.1:27017/ycsb -threads 1 -P ~/YCSB/workloads/workloadb -p recordcount=100000 1> extendedResults.txt
 ```
 
 # Network tests
